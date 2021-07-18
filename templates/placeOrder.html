@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="p-5" style="margin-top:50px; background-color:SeaShell;"">
+<h3 class="text-center" style="color:yellow; font-weight: bold; ">Place Your Order Here</h3>
+ {% set stat=status %}
+  
+  <script >
+    function order()
+    {
+        
+        var unitPrice, promotion, quantity, price, TotalPrice;
+        quantity = parseFloat(document.form1.quantity.value);
+        unitPrice = parseFloat(document.form1.unitPrice.value);
+        
+         price = unitPrice * quantity
+         
+         if (price >= 8000){
+         promotion = 500
+         TotalPrice = price - 500}
+         
+         else if (price >= 7000 && price <=7900) {
+         promotion = 450
+         TotalPrice = price - 450}
+        
+         else if (price >= 6000 && price <=6900) {
+         promotion = 400
+         TotalPrice = price - 400}
+        
+         else if (price >= 5000 && price <=5900) {
+         promotion = 350
+         TotalPrice = price - 350}
+        
+         else if (price >= 4000 && price <=4900) {
+         promotion = 300
+         TotalPrice = price - 300}
+         
+         else if (price >= 3000 && price <=3900) {
+         promotion = 250
+         TotalPrice = price - 250}
+         
+         else if (price >= 2000 && price <=2900) {
+         promotion = 200
+         TotalPrice = price - 200}
+         
+         else if (price >= 1000 && price <=1900) {
+         promotion = 150
+         TotalPrice = price - 150}
+        
+         else{
+         promotion = 0
+         TotalPrice = price}         
+            
+       
+        document.form1.promotion.value = promotion;
+        document.form1.totalPrice.value = TotalPrice;
+         
+    }
+</script>
+  
+  <form name="form1" action='/inupdateorder' method='post' style="margin-left:400px">
+    {% if stat=="1": %}
+    Order No :<br>
+    <input type="text" name="orderNo" value="{{row[0]}}" readonly><br>
+    {% else: %}
+    <!-- <input type="text" name="id" value="{{row[0]}}"><br> -->
+    {% endif %}
+    
+    <h6 class="pt-4" style="color:black; font-weight: bold;">Product No : </h6>
+    <select name="Product_No" class="" style="width: 210px; height: 30px">
+        {% for row in pdt %}
+            <option value="{{ row[0] }}"> {{ row[0] }} - {{ row[1] }}</option>            
+        {% endfor %}        
+    </select><br>
+    
+       
+    <h6 class="pt-3" style="color:black; font-weight: bold;">Unit Price : </h6>
+    <select name="unitPrice" class="" style="width: 210px; height: 30px">
+        {% for row in product %}
+            <option value="{{ row[2] }}">{{ row[2] }}</option>
+        {% endfor %}
+    </select><br>
+    
+    <h6 class="pt-3" style="color:black; font-weight: bold;">Quantity : </h6>
+    <input type="text" name="quantity" onkeyup="order()" value="{{row[3]}}" ><br>
+    
+    <h6 class="pt-3" style="color:black; font-weight: bold;">Promotion : </h6>
+    <input type="text" name="promotion" value="{{row[4]}}" ><br>
+    
+    <h6 class="pt-3" style="color:black; font-weight: bold;">Total Price : </h6>
+    <input type="number" name="totalPrice" value="{{row[5]}}" ><br>
+    
+    <h6 class="pt-3" style="color:black; font-weight: bold;">Order Placed Date : </h6>
+    <input type="date" name="placedDate" value="{{row[6]}}" ><br>
+    
+  
+    <input type="hidden" name="status" value="{{status}}"> 
+    <br>
+   <button type=submit class="btn btn-primary">Place Order</button>
+</form>
+</div>
+
+{% endblock %}
+

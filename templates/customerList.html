@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="border:4px solid lightblue; background-color: Seashell; height:1500px" class="p-5">
+
+<a href="/newCustomer"><button class="btn btn-primary" style="margin:60px 0 0 490px">Add New Customer</button></a>
+<a href="/searchCustomer"><button class="btn btn-secondary ml-3" style="margin-top:60px">Search Customer</button></a>
+<a href="/sellerList"><button class="btn btn-info ml-3" style="margin-top:60px">View All Seller</button></a>
+
+<table class="table mt-4" >
+
+<tr>
+<th>Customer ID</th>
+<th>Customer Name</th>
+<th>Address</th>
+<th>City</th>
+<th>State</th>
+<th>Phone</th>
+
+</tr>
+{% for row in rows %}
+ <tr>
+   <td>{{row[0]}}</td>
+   <td>{{row[1]}}</td>
+   <td>{{row[2]}}</td>
+   <td>{{row[3]}}</td>
+   <td>{{row[4]}}</td>
+   <td>{{row[5]}}</td>   
+   
+   <td><a href='/delete/{{row[0]}}'> <button type="button" class="btn btn-danger">Delete</button> </a>
+   <td><a href='/edit/{{row[0]}}'> <button type="button" class="btn btn-success">Update</button> </a>
+
+ </tr>    
+
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}

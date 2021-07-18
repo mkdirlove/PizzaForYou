@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="margin-top:90px;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row align-items-center pl-5 bg-info">
+                    <div class="col-md-7">
+                        <h1>HAWIIAN CLASSIC</h1>
+                        <p>Starting @ ₱139.00</p>
+                        
+                    </div>
+                    <div class="col-md-5">
+                        <img src="static/images/banner-products/slider-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row align-items-center pl-5 bg-info">
+                      <div class="col-md-7">
+                        <h1>PIZZA DELUXE</h1>
+                        <p>Starting @ ₱379.00</p>
+                        
+                      </div>
+                      <div class="col-md-5">
+                        <img src="static/images/banner-products/slider-2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row align-items-center pl-5 bg-info">
+                      <div class="col-md-7">
+                          <h1>EXTRAVAGANZZA</h1>
+                          <p>Starting @ ₱429.00</p>
+                          
+                      </div>
+                      <div class="col-md-5">
+                        <img src="static/images/banner-products/slider-3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                  </div>                
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+    
+<div class="card-group mt-1">
+  <div class="card bg-warning">
+    <img src="static/images/banner-images/banner-1.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">EXTRAVAGANZZA</h5>
+      <p class="card-text">Pepperoni, Italian sausage, ham, beef, onions, black olives green bell pepper, mushroom, mozzarella cheese and pizza sauce.</p>
+      </div>
+    <div class="card-footer">
+      <small class="text-muted"></small>
+    </div>
+  </div>
+  <div class="card bg-info">
+    <img src="static/images/banner-images/banner-2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">MEATZZA</h5>
+      <p class="card-text">Pepperoni, bacon, beef, Italian sausage, ham,mozzarella cheese and pizza sauce.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"></small>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <img src="static/images/banner-images/banner-3.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">WHITE BACON</h5>
+      <p class="card-text">White sauce, mozzarella cheese, bacon, parmesan, garlic seasoning.</p>
+    </div>
+    
+    <div class="card-footer">
+      <small class="text-muted"></small>
+    </div>
+  </div>
+</div>
+<footer class="bg-dark pt-5 pb-2 mt-1 mb-2">
+  <div class="col-md-12 d-flex">
+    <div class="col-md-4">
+      <p style="color: white">
+      </p>
+    </div>
+    <div class="col-md-2">
+      <ul style="list-style: none; color: white">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <p class="text-center pt-4" style="color: white">
+    Developed by Group 4
+  </p>
+</footer>
+{% endblock %}

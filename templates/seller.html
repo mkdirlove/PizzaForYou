@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="p-5" style="background-color:LightGoldenrodYellow; border:3px solid cyan; height:780px">
+<h2 style="margin-top:70px" class="text-center pb-4"> ALL SELLER LIST : </h2>
+<table class="table">
+
+<tr>
+<th>Seller ID</th>
+<th>Shop Name</th>
+<th>Category</th>
+<th>Ratings</th>
+<th>Phone</th>
+<th>Product No</th>
+
+</tr>
+{% for row in rows %}
+ <tr>
+   <td>{{row[0]}}</td>
+   <td>{{row[1]}}</td>
+   <td>{{row[2]}}</td>
+   <td>{{row[3]}}</td>
+   <td>{{row[4]}}</td>
+   <td>{{row[5]}}</td>  
+ </tr>    
+
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}

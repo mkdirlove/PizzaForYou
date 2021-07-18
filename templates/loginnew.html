@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% block body %}
+
+<div class="p-5" style="background-image: url('static/images/backgrounds/background-1.jpg'); background-repeat: no-repeat;background-attachment: fixed; background-size: cover; height: 605px">
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+
+ 
+<form action="/login" method="POST">
+    <div class="login" style="text-align: center;">
+        <div class="login-screen">
+            <div class="app-title">
+            <img src="static/images/logo1.png" alt="..." style="height: 250px; width: 520px;">
+            <h1 class="pt-4" style="color:purple"><span style="color: yellow; font-weight: bold;">Please Login</span></h1>
+            </div>
+ 
+            <div class="login-form">
+                <div class="control-group">
+                 <label for="customerID"> <h5 style="color: white; font-weight: bold;"> Customer ID :</h5> </label>
+                <input type="text" class="login-field" value="" name="customerID">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+ 
+                <div class="control-group mt-2">
+                 <label for="password"> <h5 class="pl-4" style="color: white; font-weight: bold;"> Password : </h5> </label>
+                <input type="password" class="login-field" value="" name="password">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                <div style="margin: 10px 0; color: red;">
+                    <span>{{ message }} </span>
+                </div>
+              
+                <button type="submit" class="btn btn-danger">Login</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</form>
+ 
+{% endif %}
+</div>
+
+{% endblock %}

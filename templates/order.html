@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="p-5" style="background-color:SeaShell;">
+<h2 style="margin-top:60px; color: Green" class="text-center pb-4"> ALL ORDER LIST : </h2>
+<table class="table">
+
+<tr>
+<th>Order Number</th>
+<th>Product Description</th>
+<th>Unit Price</th>
+<th>Quantity</th>
+<th>Total Price <br> after Discount</th>
+<th>Placed Date</th>
+<th>Sold by</th>
+</tr>
+
+{% for row in rows %}
+ <tr>
+   <td>{{row[0]}}</td>
+   <td>{{row[1]}}</td>
+   <td>{{row[2]}}</td>
+   <td>{{row[3]}}</td>
+   <td>{{row[4]}}</td>
+   <td>{{row[5]}}</td> 
+   <td>{{row[6]}}</td>  
+      
+   <td><a href='/deleteOrder/{{row[0]}}'> <button type="button" class="btn btn-danger">Delete</button> </a>
+   
+ </tr>    
+
+{% endfor %}
+</table>
+
+<a href="/placeOrder"><button class="btn btn-info">Buy More</button></a>
+</div>
+
+{% endblock %}

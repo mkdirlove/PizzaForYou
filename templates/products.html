@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="border:2px solid lightblue; background-color:lightcyan" class="p-5">
+<h2 class="text-center pb-4" style="margin-top:60px"> Available Pizza : </h2>
+<table class="table">
+
+<tr>
+<th>Product No</th>
+<th>Description</th>
+<th>Unit Price</th>
+<th>Promotion</th>
+<th>Delivery Date</th>
+
+</tr>
+{% for row in rows %}
+ <tr>
+   <td>{{row[0]}}</td>
+   <td>{{row[1]}}</td>
+   <td>{{row[2]}}</td>
+   <td>{{row[3]}}</td>
+   <td>{{row[4]}}</td> 
+
+ </tr>    
+
+{% endfor %}
+</table>
+
+<a href='/placeOrder'><button type="button" class="btn btn-info btn-lg">Buy Now</button> </a>
+
+</div>
+
+    <div class="container p-4" style="margin-top:10px; border:2px solid lightblue; background-color:LightYellow">
+      <div class="d-flex justify-content-between">
+        <h2>Classic</h2>
+        <h4>Our Classic Pizza</h4>
+      </div>
+      <br />
+      <div class="card-deck">
+        <div class="card">
+          <img src="static/images/classic/cheese-mania.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Cheese Mania</h5>
+            <p class="card-text">
+              Mozzarella cheese, pizza sauce
+            </p>
+            <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              <p class="card-text">
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+              </p>
+            <h5>₱109</h5>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img src="static/images/classic/ham-cheese.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Ham & Cheese</h5>
+            <p class="card-text">
+            Smoked ham & mozzarella
+            </p>
+            <p class="card-text">
+            *IMPORTANT: (Pls read before you place order):
+            </p>
+            <p class="card-text">
+            Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱139</h5>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img src="static/images/classic/hawaiian-classic.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Hawaiian Classic</h5>
+            <p class="card-text">
+             Pineapple, ham, bacon, mozzarella cheese and Pizza sauce
+             </p>
+             <p class="card-text">
+             *IMPORTANT: (Pls read before you place order):
+             </p>
+             <p class="card-text">
+             Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱139</h5>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+        <div class="container p-4 mb-4" id="products" style="margin-top:10px; border:2px solid lightblue; background-color:LemonChiffon">
+      <div class="d-flex justify-content-between">
+        <h2>Finest</h2>
+        <h4>Our Finest Pizza</h4>
+      </div>
+      <br />
+      <div class="card-deck">
+        <div class="card">
+          <img
+            src="static/images/finest/five-cheese.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Five Cheese</h5>
+            <p class="card-text">
+              Mozzarella, feta, cheddar, parmesan, and Pizza For You signature cheese sauce.
+              </p>
+              <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              <p class="card-text">
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱379</h5>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="static/images/finest/pacific-veggie.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Pacific Veggie</h5>
+            <p class="card-text">
+              Tomatoes, green bell pepper, corn, black olives,mushroom, mozzarella cheese and pizza sauce.
+              </p>
+              <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱379</h5>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="static/images/finest/pizza-deluxe.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Pizza Deluxe</h5>
+            <p class="card-text">
+              Mushroom, black olives, pepperoni, onions, green bell pepper, Italian sausage, mozzarella cheese and pizza sauce
+              </p>
+              <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              <p class="card-text">
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱375</h5>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container p-4" style="margin-top:10px; border:2px solid lightblue; background-color:LightYellow">
+      <div class="d-flex justify-content-between">
+        <h2>Specialties</h2>
+        <h4>Our Specialty Pizza</h4>
+      </div>
+      <br />
+      <div class="card-deck">
+        <div class="card">
+          <img src="static/images/special/extravaganzza.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Extravaganzza</h5>
+            <p class="card-text">
+              Pepperoni, Italian sausage, ham, beef, onions, black olives green bell pepper, mushroom, mozzarella cheese and pizza sauce.
+              </p>
+              <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              <p class="card-text">
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱429</h5>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img src="static/images/special/meatzza.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Meatzza</h5>
+            <p class="card-text">
+              Pepperoni, bacon, beef, Italian sausage, ham,mozzarella cheese and pizza sauce.
+              </p>
+              <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              <p class="card-text">
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱425</h5>
+            
+          </div>
+        </div>
+        <div class="card">
+          <img src="static/images/special/white-bacon.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">White Bacon</h5>
+            <p class="card-text">
+              Pizza sauce, mozzarella cheese, ham.
+              </p>
+              <p class="card-text">
+              *IMPORTANT: (Pls read before you place order):
+              </p>
+              <p class="card-text">
+              Delivery time 9 AM - 5 PM, 7 days a week. Delivery is available to Metro Manila and Selected Provincial Areas.
+            </p>
+            <h5>₱425</h5>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
