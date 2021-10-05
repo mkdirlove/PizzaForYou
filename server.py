@@ -174,4 +174,5 @@ def logout():
 # start the server using the run() method
 if __name__ == "__main__":
      app.secret_key = "!mzo53678912489"
-     app.run()
+     app.run(debug=False,host='0.0.0.0')
+     app.run()    
